@@ -79,18 +79,21 @@ export function Contact() {
             <div className="pt-8 border-t border-border">
               <p className="text-center text-muted-foreground mb-6">Me siga nas redes sociais</p>
               <div className="flex justify-center gap-6">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-14 h-14 rounded-xl bg-secondary flex items-center justify-center hover:scale-110 transition-all ${social.color}`}
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-6 w-6" />
-                  </a>
-                ))}
+                {socialLinks.map((social) => {
+                  const Icon = social.icon
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-14 h-14 rounded-xl bg-secondary flex items-center justify-center hover:scale-110 transition-all ${social.color}`}
+                      aria-label={social.label}
+                    >
+                      <Icon className="h-6 w-6" aria-hidden="true" />
+                    </a>
+                  )
+                })}
               </div>
             </div>
           </div>
